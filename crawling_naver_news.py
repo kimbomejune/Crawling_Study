@@ -14,11 +14,8 @@ import json
 import requests
 import bs4
 from bs4 import BeautifulSoup
-from pyvirtualdisplay import Display
 import pandas as pd
 import numpy as np
-
-from utils import *
 # %%
 # ================================================================================
 # Configuring requesting data and constants
@@ -33,8 +30,8 @@ today = date.today()
 
 year = (today - relativedelta(months=1)).strftime('%Y')
 mon =  (today - relativedelta(months=1)).strftime('%m')
-
-path = data_path + f'/collection/{year}/{mon}/'
+#C:\GitClone\Crawling_Study
+path = f'Crawling_Study/Data/collection/{year}/{mon}/'
 if not os.path.exists(path):
   os.makedirs(path)
 
@@ -128,4 +125,3 @@ def main() -> None:
 # Running Python script using the command-line interface (CLI)
 if __name__ == "__main__":
     MAKE_CSV_FILE(CRAWLING_NAVER(today))
-# %%
